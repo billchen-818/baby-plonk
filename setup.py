@@ -30,6 +30,8 @@ class Setup(object):
         # TODO: generate powers_of_x
         # reference: https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-cn/5-plonk-polycom.md
 
+        powers_of_x = [b.multiply(b.G1, tau ** i) for i in range(powers)]
+
         print("Generated G1 side, X^1 point: {}".format(powers_of_x[1]))
 
         X2 = b.multiply(b.G2, tau)
